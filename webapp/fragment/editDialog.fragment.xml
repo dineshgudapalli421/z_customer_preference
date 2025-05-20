@@ -1,0 +1,73 @@
+<core:FragmentDefinition 
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form">
+	<Dialog id="editDialog" title="Commercial Preference" class="sapUiSmallMargin" afterClose=".closeDialog">
+		<content>
+		  <form:SimpleForm editable="true" id="ideditForm">
+				<Label text="Business Partner"/>
+				<Input
+					id="iduBp"
+					showSuggestion="true" editable="false">
+				</Input>
+
+				<Label text="Object Type"/>
+				<Select id="iduObjectType" editable="false">
+					<core:Item key="isuPartner" text="ISUPARTNER" />
+					<core:Item key="isuAccount" text="ISUACCOUNT" />
+				</Select>
+
+				<Label text="key"/>
+				<Input
+					id="iduKey"
+					showSuggestion="true" editable="false">
+				</Input>
+
+				<Label text="Corresp. Role"/>
+				<Input
+					id="iduCorrespRole"
+					showSuggestion="true"  editable="false">
+				</Input>
+
+				<Label text="Corresp. Type"/>
+				<Input
+					id="iduCorrespType"
+					showSuggestion="true"  editable="true">
+				</Input>
+
+				<Label text="Disp Control"/>
+				<Input
+					id="iduDispControl"
+					showSuggestion="true"  editable="false">
+				</Input>
+
+				<Label text="Sequence Number"/>
+				<Input
+					id="iduSequence"
+					showSuggestion="true" editable="false">
+				</Input>
+
+				<Label text="Status"/>
+				<Input
+					id="iduStatus"
+					showSuggestion="true" editable="true">
+				</Input>
+
+				<Label text="Valid From"/>
+				 <DatePicker
+                    id="iduValidFrom" width="100%"
+                    placeholder="Enter Date" editable="true"/> 
+					
+				<Label text="Valid To"/>
+				 <DatePicker
+                    id="iduValidTo" width="100%"
+                    placeholder="Enter Date" editable="true"/> 
+		  </form:SimpleForm>
+		</content>
+		
+		<buttons>
+		<Button id="btnUpdate" text="Update" press=".onUpdateDialog" />
+		<Button id="btnUCancel" text="Cancel" press=".onCancelDialog" />
+		</buttons>
+	  </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,73 @@
+<core:FragmentDefinition 
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form">
+	<Dialog id="createDialog" title="New Commercial Preference" class="sapUiSmallMargin" afterClose=".closeDialog">
+		<content>
+		  <form:SimpleForm editable="true" id="createForm">
+				<Label text="Business Partner"/>
+				<Input
+					id="idBp"
+					showSuggestion="true">
+				</Input>
+
+				<Label text="Object Type"/>
+				<Select id="idObjectType">
+					<core:Item key="isuPartner" text="ISUPARTNER" />
+					<core:Item key="isuAccount" text="ISUACCOUNT" />
+				</Select>
+
+				<Label text="key"/>
+				<Input
+					id="idKey"
+					showSuggestion="true">
+				</Input>
+
+				<Label text="Corresp. Role"/>
+				<Input
+					id="idCorrespRole"
+					showSuggestion="true">
+				</Input>
+
+				<Label text="Corresp. Type"/>
+				<Input
+					id="idCorrespType"
+					showSuggestion="true">
+				</Input>
+
+				<Label text="Disp Control"/>
+				<Input
+					id="idDispControl"
+					showSuggestion="true">
+				</Input>
+
+				<Label text="Sequence Number"/>
+				<Input
+					id="idSequence"
+					showSuggestion="true">
+				</Input>
+
+				<Label text="Status"/>
+				<Input
+					id="idStatus"
+					showSuggestion="true">
+				</Input>
+
+				<Label text="Valid From"/>
+				 <DatePicker
+                    id="idValidFrom" width="100%"
+                    placeholder="Enter Date"/> 
+					
+				<Label text="Valid To"/>
+				 <DatePicker
+                    id="idValidTo" width="100%"
+                    placeholder="Enter Date"/> 
+		  </form:SimpleForm>
+		</content>
+		
+		<buttons>
+		<Button id="btnSubmit" text="Submit" press=".onSubmitDialog" />
+		<Button id="btnCancel" text="Cancel" press=".onCancelDialog" />
+		</buttons>
+	  </Dialog>
+</core:FragmentDefinition>
