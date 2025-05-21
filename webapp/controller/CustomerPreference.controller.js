@@ -39,26 +39,31 @@ sap.ui.define([
             const oView = this.getView();
             var aFilter = [];
             var businessPartner = this.getView().byId("idBP").getValue();
+            var contractAccount = this.getView().byId("idCA").getValue();
             if (businessPartner === "") {
                 return MessageBox.error("Business Partner is mandatory...");
             }
-            aFilter.push(new Filter("Gpart", FilterOperator.EQ, businessPartner));
+            aFilter.push(new Filter("AccountID", FilterOperator.EQ, businessPartner));
+            if (contractAccount !== "") {
+                aFilter.push(new Filter("EntitySet", FilterOperator.EQ, "ContractAccount"));
+                aFilter.push(new Filter("AcEntityKey", FilterOperator.EQ, contractAccount));
+            }
             var oModel = this.getOwnerComponent().getModel();
 
             var oJsonModel = new sap.ui.model.json.JSONModel();
-            var oTable = this.getView().byId("tblCustomerPreference");
-           
+            var oTable = this.getView().byId("tblCommunicationPreference");
+
             var oBusyDialog = new sap.m.BusyDialog({
                 title: "Loading Data",
                 text: "Please wait..."
             });
             oBusyDialog.open();
-            oModel.read("/Comm_PrefSet", {
+            oModel.read("/ZCommunicationPreferences", {
                 filters: aFilter,
                 success: function (response) {
                     oBusyDialog.close();
                     oJsonModel.setData(response.results);
-                    oView.byId("tblCustomerPreference").setModel(oJsonModel, "CustModel");
+                    oView.byId("tblCommunicationPreference").setModel(oJsonModel, "CustModel");
                     oTable.clearSelection(true);
                 },
                 error: (oError) => {
@@ -67,7 +72,7 @@ sap.ui.define([
                 }
             });
 
-            this.switchState("Navigation");
+            //this.switchState("Navigation");
 
         },
         onCreateRecord: function () {
@@ -102,7 +107,7 @@ sap.ui.define([
         handleActionPress: function (oEvent) {
             const oRow = oEvent.getParameter("row");
             const oItem = oEvent.getParameter("item");
-            var tb = this.getView().byId("tblCustomerPreference");
+            var tb = this.getView().byId("tblCommunicationPreference");
             var rowid = tb.getSelectedIndices();
             if (rowid.length === 0) {
                 return MessageBox.error("Please select a row.");
@@ -124,12 +129,12 @@ sap.ui.define([
                 this.oDialog.then((oDialog) => {
                     oDialog.open();
                 });
-               
+
             }
 
         },
         switchState: function (sKey) {
-            const oTable = this.byId("tblCustomerPreference");
+            const oTable = this.byId("tblCommunicationPreference");
             let iCount = 0;
             let oTemplate = oTable.getRowActionTemplate();
             if (oTemplate) {

@@ -2,7 +2,7 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
 	xmlns:form="sap.ui.layout.form">
-	<Dialog id="editDialog" title="Commercial Preference" class="sapUiSmallMargin" afterClose=".closeDialog">
+	<Dialog id="editDialog" title="Communication Preference" class="sapUiSmallMargin" afterClose=".closeDialog">
 		<content>
 		  <form:SimpleForm editable="true" id="ideditForm">
 				<Label text="Business Partner"/>
@@ -12,56 +12,42 @@
 				</Input>
 
 				<Label text="Object Type"/>
-				<Select id="iduObjectType" editable="false">
-					<core:Item key="isuPartner" text="ISUPARTNER" />
-					<core:Item key="isuAccount" text="ISUACCOUNT" />
-				</Select>
+				<Input
+					id="iduObjectType"
+					showSuggestion="true" editable="false">
+				</Input>
 
-				<Label text="key"/>
+				<Label text="Object key"/>
 				<Input
 					id="iduKey"
 					showSuggestion="true" editable="false">
 				</Input>
 
-				<Label text="Corresp. Role"/>
-				<Input
-					id="iduCorrespRole"
-					showSuggestion="true"  editable="false">
-				</Input>
-
-				<Label text="Corresp. Type"/>
+				<Label text="Correspondence Type"/>
 				<Input
 					id="iduCorrespType"
 					showSuggestion="true"  editable="true">
 				</Input>
-
-				<Label text="Disp Control"/>
+				
+				<Label text="Correspondence Role"/>
 				<Input
-					id="iduDispControl"
+					id="iduCorrespRole"
+					showSuggestion="true"  editable="false">
+				</Input>				
+
+				<Label text="Delivery Channel"/>
+				<Input
+					id="iduDeliveryChannel"
 					showSuggestion="true"  editable="false">
 				</Input>
 
-				<Label text="Sequence Number"/>
+				<Label text="Delivery Address"/>
 				<Input
-					id="iduSequence"
-					showSuggestion="true" editable="false">
-				</Input>
-
-				<Label text="Status"/>
-				<Input
-					id="iduStatus"
+					id="iduDeliveryAddress"
 					showSuggestion="true" editable="true">
 				</Input>
 
-				<Label text="Valid From"/>
-				 <DatePicker
-                    id="iduValidFrom" width="100%"
-                    placeholder="Enter Date" editable="true"/> 
-					
-				<Label text="Valid To"/>
-				 <DatePicker
-                    id="iduValidTo" width="100%"
-                    placeholder="Enter Date" editable="true"/> 
+				<CheckBox id="chkUStatus" text="Status" selected="true" />
 		  </form:SimpleForm>
 		</content>
 		

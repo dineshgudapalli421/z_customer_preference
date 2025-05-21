@@ -2,7 +2,7 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
 	xmlns:form="sap.ui.layout.form">
-	<Dialog id="createDialog" title="New Commercial Preference" class="sapUiSmallMargin" afterClose=".closeDialog">
+	<Dialog id="createDialog" title="New Communication Preference" class="sapUiSmallMargin" afterClose=".closeDialog">
 		<content>
 		  <form:SimpleForm editable="true" id="createForm">
 				<Label text="Business Partner"/>
@@ -17,51 +17,41 @@
 					<core:Item key="isuAccount" text="ISUACCOUNT" />
 				</Select>
 
-				<Label text="key"/>
-				<Input
+				<Label text="Object key"/>
+				<!-- <Input
 					id="idKey"
 					showSuggestion="true">
-				</Input>
+				</Input> -->
+				<ComboBox id="cmbobjKey"
+					showClearIcon="true">
+				</ComboBox>
 
 				<Label text="Corresp. Role"/>
-				<Input
-					id="idCorrespRole"
-					showSuggestion="true">
-				</Input>
+				<ComboBox id="cmbCorrespRole"
+					showClearIcon="true">
+				</ComboBox>
 
 				<Label text="Corresp. Type"/>
 				<Input
 					id="idCorrespType"
-					showSuggestion="true">
+					showSuggestion="true" value="COMM" editable="false">
 				</Input>
 
-				<Label text="Disp Control"/>
+				<Label text="Delivery Channel"/>
+				<Select id="idDeliveryChannel">
+					<core:Item key="emal" text="EMAL" />
+					<core:Item key="sms" text="SMS" />
+					<core:Item key="ivr" text="IVR" />
+					<core:Item key="push" text="PUSH" />
+				</Select>
+
+				<Label text="Delivery Address"/>
 				<Input
-					id="idDispControl"
+					id="idDeliveryAddress"
 					showSuggestion="true">
 				</Input>
 
-				<Label text="Sequence Number"/>
-				<Input
-					id="idSequence"
-					showSuggestion="true">
-				</Input>
-
-				<Label text="Status"/>
-				<Input
-					id="idStatus"
-					showSuggestion="true">
-				</Input>
-
-				<Label text="Valid From"/>
-				 <DatePicker
-                    id="idValidFrom" width="100%"
-                    placeholder="Enter Date"/> 
-					
-				<Label text="Valid To"/>
-				 <DatePicker
-                    id="idValidTo" width="100%"
-                    placeholder="Enter Date"/> 
+				<CheckBox id="chkStatus" text="Status" selected="true" />
 		  </form:SimpleForm>
 		</content>
 		

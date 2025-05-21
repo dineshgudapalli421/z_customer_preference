@@ -5,7 +5,7 @@
     xmlns:l="sap.ui.layout"
     xmlns:f="sap.ui.layout.form" 
 >   
-<Table id="tblCustomerPreference"
+<Table id="tblCommunicationPreference"
                 ariaLabelledBy="title"
                 rows="{CustModel>/}" 
                 enableSelectAll="false"
@@ -24,58 +24,51 @@
                 <columns>
                     <Column
                         width="11rem">
-                        <m:Label text="Client" textAlign="Center" width="100%"/>
-                        <template>
-                            <m:Text text="{CustModel>mandt}"/>
-                        </template>
-                    </Column>
-                    <Column
-                        width="11rem">
                         <m:Label text="Business Partner" textAlign="Center" width="100%"/>
                         <template>
-                            <m:Text text="{CustModel>Gpart}"/>
+                            <m:Text text="{CustModel>AccountID}"/>
                         </template>
                     </Column>   
                     <Column
                         width="11rem">
                         <m:Label text="Object Type" textAlign="Center" width="100%"/>
                         <template>
-                            <m:Text text="{CustModel>Objtype}"/>
+                            <m:Text text="{CustModel>EntitySet}"/>
                         </template>
                     </Column>  
                     <Column
                         width="11rem">
-                        <m:Label text="Key" textAlign="Center" width="100%"/>
+                        <m:Label text="Object Key" textAlign="Center" width="100%"/>
                         <template>
-                            <m:Text text="{CustModel>Objkey}"/>
+                            <m:Text text="{CustModel>EntityKey}"/>
                         </template>
                     </Column> 
                     <Column
                         width="11rem">
-                        <m:Label text="Corresp. Role" textAlign="Center" width="100%"/>
+                        <m:Label text=" Correspondence Type" textAlign="Center" width="100%"/>
                         <template>
-                            <m:Text text="{CustModel>CorrRole}"/>
+                            <m:Text text="{CustModel>CorrespondenceTypeID}"/>
                         </template>
                     </Column> 
                     <Column
                         width="11rem">
-                        <m:Label text="Corresp. Type" textAlign="Center" width="100%"/>
+                        <m:Label text=" Correspondence Role" textAlign="Center" width="100%"/>
                         <template>
-                            <m:Text text="{CustModel>Cotyp}"/>
+                            <m:Text text="{CustModel>CommunicationCategoryID}"/>
                         </template>
                     </Column>   
                     <Column
                         width="11rem">
-                        <m:Label text="Disp. Control" textAlign="Center" width="100%"/>
+                        <m:Label text="Delivery Channel" textAlign="Center" width="100%"/>
                         <template>
-                            <m:Text text="{CustModel>Sendcontrol}"/>
+                            <m:Text text="{CustModel>DeliveryChannelID}"/>
                         </template>
                     </Column>   
                     <Column
                         width="11rem">
-                        <m:Label text="Sequence Number" textAlign="Center" width="100%"/>
+                        <m:Label text="Delivery Address" textAlign="Center" width="100%"/>
                         <template>
-                            <m:Text text="{CustModel>Consnumber}"/>
+                            <m:Text text="{CustModel>DeliveryAddress}"/>
                         </template>
                     </Column>  
                     <Column
@@ -84,49 +77,7 @@
                         <template>
                             <m:Text text="{CustModel>Status}"/>
                         </template>
-                    </Column>   
-                    <Column
-                        width="11rem">
-                        <m:Label text="Valid From" textAlign="Center" width="100%"/>
-                        <template>
-                            <m:Text text="{CustModel>ValidFrom}"/>
-                        </template>
-                    </Column>    
-                    <Column
-                        width="11rem">
-                        <m:Label text="Valid To" textAlign="Center" width="100%"/>
-                        <template>
-                            <m:Text text="{CustModel>ValidTo}"/>
-                        </template>
                     </Column> 
-                    <Column
-                        width="11rem">
-                        <m:Label text="Create Date" textAlign="Center" width="100%"/>
-                        <template>
-                            <m:Text text="{CustModel>CreatedDate}"/>
-                        </template>
-                    </Column>  
-                    <Column
-                        width="11rem">
-                        <m:Label text="Create By" textAlign="Center" width="100%"/>
-                        <template>
-                            <m:Text text="{CustModel>CreatedBy}"/>
-                        </template>
-                    </Column>
-                    <Column
-                        width="11rem">
-                        <m:Label text="Changed Date" textAlign="Center" width="100%"/>
-                        <template>
-                            <m:Text text="{CustModel>ChangedDate}"/>
-                        </template>
-                    </Column>
-                    <Column
-                        width="11rem">
-                        <m:Label text="Changed By" textAlign="Center" width="100%"/>
-                        <template>
-                            <m:Text text="{CustModel>ChangedBy}"/>
-                        </template>
-                    </Column>          
                 </columns>
         </Table> 
 </core:FragmentDefinition>

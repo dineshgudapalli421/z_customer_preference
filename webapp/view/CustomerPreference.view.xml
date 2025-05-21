@@ -30,13 +30,27 @@
                                 <fb:FilterGroupItem name="BusinessPartner" 
                                 label="Business Partner" 
                                 groupName="Group1" 
-                                visibleInFilterBar="true" mandatory="false">
+                                visibleInFilterBar="true" mandatory="true">
                                     <fb:control>
                                         <Input
                                          id="idBP" 
                                          width="90%"  
                                          showValueHelp="false"
                                          value="{filters>/idBP}"
+                                        >
+                                        </Input>
+                                    </fb:control>
+                                </fb:FilterGroupItem>  
+                                <fb:FilterGroupItem name="ContractAccount" 
+                                label="Contract Account" 
+                                groupName="Group1" 
+                                visibleInFilterBar="true" mandatory="false">
+                                    <fb:control>
+                                        <Input
+                                         id="idCA" 
+                                         width="90%"  
+                                         showValueHelp="false"
+                                         value="{filters>/idCA}"
                                         >
                                         </Input>
                                     </fb:control>
